@@ -14,7 +14,7 @@ const Register = () => {
         formData.set('email', event.target.email.value)
         formData.set('password', event.target.password.value)
         formData.set('age', event.target.age.value)
-        console.log(formData)
+        
         dispatch(register(formData))
     };
 
