@@ -70,9 +70,9 @@ export const postsSlice = createSlice({
             builder.addCase(getById.fulfilled, (state, action) => {
 
                 state.post = action.payload;
-                
-                });
-    },
+
+            });
+},
 
 });
 
