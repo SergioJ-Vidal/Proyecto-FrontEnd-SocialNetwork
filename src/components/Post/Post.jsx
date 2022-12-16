@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Post = () => {
@@ -10,12 +10,15 @@ const Post = () => {
 
         return (
 
-            <div className="post">
+            <div className="post" key={post.id}>
 
-                <p>{post.title}</p>
+                <Link to={"/post/" + post._id}>
+
+                    <p>{post.title}</p>
+
+                </Link>
 
             </div>
-
         );
 
     });

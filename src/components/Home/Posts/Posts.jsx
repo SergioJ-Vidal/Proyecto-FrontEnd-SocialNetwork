@@ -9,14 +9,16 @@ import { getAll, reset } from "../../../features/posts/postsSlice";
 const Posts = () => {
     const { isLoading } = useSelector((state) => state.posts);
     const dispatch = useDispatch();
-
-    useEffect(async () => {
+    const getAllAndReset = async () => {
 
         await dispatch(getAll());
-        
-        await dispatch(reset());
-        
-        }, []);
+
+        dispatch(reset());
+    }
+    useEffect( () => {
+        getAllAndReset()
+
+    }, []);
 
     if (isLoading) {
 

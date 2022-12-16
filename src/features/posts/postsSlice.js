@@ -6,7 +6,7 @@ const initialState = {
 
     posts: [],
     isLoading: false,
-
+    post: {}
 };
 
 export const getAll = createAsyncThunk("posts/getAll", async () => {
@@ -14,6 +14,20 @@ export const getAll = createAsyncThunk("posts/getAll", async () => {
     try {
 
         return await postsService.getAll();
+
+    } catch (error) {
+
+        console.error(error);
+
+    }
+
+});
+
+export const getById = createAsyncThunk("posts/getById", async (id) => {
+
+    try {
+
+        return await postsService.getById(id);
 
     } catch (error) {
 
@@ -53,6 +67,11 @@ export const postsSlice = createSlice({
 
             });
 
+            builder.addCase(getById.fulfilled, (state, action) => {
+
+                state.post = action.payload;
+                
+                });
     },
 
 });
