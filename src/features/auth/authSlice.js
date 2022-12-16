@@ -1,9 +1,14 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import authService from "./authService";
 
+
+const user = JSON.parse(localStorage.getItem("user"));
 const initialState = {
 
-    user: null,
+    user: user ? user : null,
+    isError: false,
+    isSuccess: false,
+    message: "",
 
 };
 
@@ -14,7 +19,7 @@ export const authSlice = createSlice({
     initialState,
 
     reducers: {},
-    
+
     extraReducers: (builder) => {
 
         builder
@@ -24,6 +29,20 @@ export const authSlice = createSlice({
                 state.user = action.payload;
 
             })
+
+            .addCase(logout.fulfilled, (state) => {
+
+                state.user = null;
+
+            })
+
+            .addCase(register.fulfilled, (state, action) => {
+
+                state.isSuccess = true;
+
+                state.message = action.payload.message;
+
+            });
 
     },
 
@@ -54,6 +73,20 @@ export const login = createAsyncThunk("auth/login", async (user) => {
     try {
 
         return await authService.login(user);
+
+    } catch (error) {
+
+        console.error(error);
+
+    }
+
+});
+
+export const logout = createAsyncThunk("auth/logout", async () => {
+
+    try {
+
+        return await authService.logout();
 
     } catch (error) {
 
