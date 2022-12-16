@@ -1,11 +1,27 @@
+import React from "react";
+
+import { useSelector } from "react-redux";
+
 const Post = () => {
 
-    return (
+    const { posts } = useSelector((state) => state.posts);
 
-        <div>Post</div>
+    const post = posts.map((post) => {
 
-    )
+        return (
 
-}
+            <div className="post">
 
-export default Post
+                <p>{post.title}</p>
+
+            </div>
+
+        );
+
+    });
+
+    return <div>{post}</div>;
+
+};
+
+export default Post;
