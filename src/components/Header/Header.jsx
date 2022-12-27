@@ -2,6 +2,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../features/auth/authSlice";
 import { useState } from "react";
+import logo from "../../assets/images/logo.png"
+import "./Header.css"
 
 
 const Header = () => {
@@ -17,7 +19,7 @@ const Header = () => {
     const handleChange = (e) => {
         setText(e.target.value);
         if (e.key === "Enter") {
-            navigate('/search/'+ text)
+            navigate('/search/' + text)
         }
     };
 
@@ -34,39 +36,47 @@ const Header = () => {
 
     return (
 
-        <nav>
+        <div className="header-container">
 
-            <span>header</span>
+            <nav className="nav-main">
 
-            <div>
+                <div className="nav-container">
+                    <div className='make-box'>
+                        <a href="http://localhost:3002/" rel="noopener noreferrer" title="main">
+                            <img src={logo} className="logo" alt="logo"></img></a>
+                    </div>
 
-                {user ? <>
+                    <input onKeyUp={handleChange} placeholder="search post" name="text" />
 
-                    <span><Link to="/" onClick={onLogout}>Logout</Link></span>
+                    <div>
 
-                    <span><Link to="/profile" >{user.name}</Link> </span>
+                        {user ? <>
 
-                </>
+                            <span><Link to="/" onClick={onLogout}>Logout</Link></span>
 
-                    :
+                            <span><Link to="/profile" >{user.name}</Link> </span>
 
-                    <>
+                        </>
 
-                        <span><Link to="/login">Login</Link></span>
+                            :
 
-                        <span><Link to="/register">Register</Link></span>
+                            <>
 
-                    </>
+                                <span><Link to="/login">Login</Link></span>
 
-                }
+                                <span><Link to="/register">Register</Link></span>
 
+                            </>
 
-                <input onKeyUp={handleChange} placeholder="search post" name="text" />
+                        }
 
+                    </div>
 
-            </div>
+                </div>
 
-        </nav>
+            </nav>
+
+        </div>
 
     );
 

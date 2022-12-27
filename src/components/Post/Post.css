@@ -1,0 +1,9 @@
+.main-post {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: solid black;
+    border-radius: 8px;
+    padding: 2em;
+}

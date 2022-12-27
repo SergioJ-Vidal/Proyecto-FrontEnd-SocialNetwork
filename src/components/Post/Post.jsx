@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import "./Post.css"
 
 const Post = () => {
 
@@ -23,7 +24,7 @@ const Post = () => {
 
     });
 
-    return <div>{post}</div>;
+    return <div className="main-post">{post}</div>;
 
 };
 

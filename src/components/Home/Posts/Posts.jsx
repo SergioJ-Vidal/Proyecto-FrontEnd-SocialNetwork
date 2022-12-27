@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react'
-
 import Post from '../../Post/Post'
-
 import { useDispatch, useSelector } from "react-redux";
-
 import { getAll, reset } from "../../../features/posts/postsSlice";
+import "./Posts.css"
 
 const Posts = () => {
     const { isLoading } = useSelector((state) => state.posts);
@@ -28,7 +26,7 @@ const Posts = () => {
 
     return (
 
-        <div>
+        <div className='body-post'>
 
             <h1>Posts</h1>
 

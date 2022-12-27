@@ -1,9 +1,11 @@
 import React from 'react'
 import Posts from './Posts/Posts'
+import "./Home.css"
 
 const Home = () => {
   return (
-    <div>Home
+    <div className='home-container'>
+      Home
         <Posts/>
     </div>
   )
