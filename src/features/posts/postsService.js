@@ -23,12 +23,17 @@ const getPostByName = async (postTitle) => {
     return res.data;
 };
 
+const getComments = async (id) => {
+    const res = await axios.get(API_URL + "/comments/find/id/" + id)
+    return res.data;
+}
 
 const postsService = {
 
     getAll,
     getById,
-    getPostByName
+    getPostByName,
+    getComments
 
 };
 

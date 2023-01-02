@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3001";
+const API_URL = "http://localhost:8080";
 
 const register = async (userData) => {
 
@@ -48,11 +48,19 @@ const logout = async () => {
 
 };
 
+const profile = async (userData) => {
+
+    const res = await axios.get(API_URL + '/users/findId', userData)
+
+    return res.data
+}
+
 const authService = {
 
     register,
     login,
-    logout
+    logout,
+    profile
 
 };
 

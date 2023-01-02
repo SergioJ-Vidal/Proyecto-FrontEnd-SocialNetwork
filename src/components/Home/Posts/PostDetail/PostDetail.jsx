@@ -19,15 +19,27 @@ const PostDetail = () => {
 
     }, []);
 
+    const CommentsPost = () => {
+
+
+    }
+
     return (
 
-        <div className="post-detail">
+        <div className="post-detail-box">
 
-            <h1>PostDetail</h1>
+            <div className="post-detail">
 
-            <p>{post.title}</p>
+                <h1>{post.title}</h1>
 
-            <p>{post.body}</p>
+                <p>{post.body}</p>
+
+            </div>
+
+            <div className="post-details">
+                <button onClick={CommentsPost()}>Like</button>
+                <button onClick={CommentsPost()}>Show Comments</button>
+            </div>
 
         </div>
 

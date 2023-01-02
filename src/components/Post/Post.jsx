@@ -9,6 +9,8 @@ const Post = () => {
 
     const post = posts.map((post) => {
 
+        const name = ((post || {}).userId || {}).name;
+
         return (
 
             <div className="post" key={post.id}>
@@ -18,6 +20,8 @@ const Post = () => {
                     <p>{post.title}</p>
 
                 </Link>
+                
+                    <span>{name}</span>
 
             </div>
         );

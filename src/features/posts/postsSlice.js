@@ -45,6 +45,14 @@ export const getPostByName = createAsyncThunk("posts/getPostByName", async (post
     }
 });
 
+export const getComments = createAsyncThunk("comments/find", async (comments) => {
+    try {
+        return await postsService.getComments(comments);
+    } catch (error) {
+        console.error(error);
+    }
+})
+
 
 export const postsSlice = createSlice({
 

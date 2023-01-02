@@ -42,6 +42,14 @@ export const authSlice = createSlice({
 
                 state.message = action.payload.message;
 
+            })
+
+            .addCase(profile.fulfilled, (state, action) => {
+
+                state.isSuccess = true;
+
+                state.user = action.payload;
+
             });
 
     },
@@ -87,6 +95,20 @@ export const logout = createAsyncThunk("auth/logout", async () => {
     try {
 
         return await authService.logout();
+
+    } catch (error) {
+
+        console.error(error);
+
+    }
+
+});
+
+export const profile = createAsyncThunk("auth/profile", async () => {
+
+    try {
+
+        return await authService.profile(user);
 
     } catch (error) {
 

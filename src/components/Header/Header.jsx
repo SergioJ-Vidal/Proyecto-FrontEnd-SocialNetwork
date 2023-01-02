@@ -42,7 +42,7 @@ const Header = () => {
 
                 <div className="nav-container">
                     <div className='make-box'>
-                        <a href="http://localhost:3002/" rel="noopener noreferrer" title="main">
+                        <a href="http://localhost:3000/" rel="noopener noreferrer" title="main">
                             <img src={logo} className="logo" alt="logo"></img></a>
                     </div>
 
@@ -54,7 +54,7 @@ const Header = () => {
 
                             <span><Link to="/" onClick={onLogout}>Logout</Link></span>
 
-                            <span><Link to="/profile" >{user.name}</Link> </span>
+                            <span><Link to="/profile" >Profile</Link> </span>
 
                         </>
 
