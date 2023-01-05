@@ -19,11 +19,6 @@ const PostDetail = () => {
 
     }, []);
 
-    const CommentsPost = () => {
-
-
-    }
-
     return (
 
         <div className="post-detail-box">
@@ -36,9 +31,10 @@ const PostDetail = () => {
 
             </div>
 
-            <div className="post-details">
-                <button onClick={CommentsPost()}>Like</button>
-                <button onClick={CommentsPost()}>Show Comments</button>
+            <div className="comments-details">
+
+                <button>Like</button>
+                <button>Show Comments</button>
             </div>
 
         </div>

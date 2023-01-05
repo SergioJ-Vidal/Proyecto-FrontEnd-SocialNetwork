@@ -6,10 +6,13 @@
     border: solid black;
     border-radius: 8px;
     padding: 2em;
+    gap:2rem;
 }
 .post {
-    display: flex;
+    display: flex, block;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    border-bottom: solid black;
+    width: 100%;
 }
