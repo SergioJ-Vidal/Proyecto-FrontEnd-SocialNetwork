@@ -12,49 +12,6 @@ const initialState = {
 
 };
 
-export const authSlice = createSlice({
-
-    name: "auth",
-
-    initialState,
-
-    reducers: {},
-
-    extraReducers: (builder) => {
-
-        builder
-
-            .addCase(login.fulfilled, (state, action) => {
-
-                state.user = action.payload;
-
-            })
-
-            .addCase(logout.fulfilled, (state) => {
-
-                state.user = null;
-
-            })
-
-            .addCase(register.fulfilled, (state, action) => {
-
-                state.isSuccess = true;
-
-                state.message = action.payload.message;
-
-            })
-
-            .addCase(profile.fulfilled, (state, action) => {
-
-                state.isSuccess = true;
-
-                state.user = action.payload;
-
-            });
-
-    },
-
-});
 
 export const register = createAsyncThunk(
 
@@ -115,6 +72,50 @@ export const profile = createAsyncThunk("auth/profile", async () => {
         console.error(error);
 
     }
+
+});
+
+export const authSlice = createSlice({
+
+    name: "auth",
+
+    initialState,
+
+    reducers: {},
+
+    extraReducers: (builder) => {
+
+        builder
+
+            .addCase(login.fulfilled, (state, action) => {
+
+                state.user = action.payload;
+
+            })
+
+            .addCase(logout.fulfilled, (state) => {
+
+                state.user = null;
+
+            })
+
+            .addCase(register.fulfilled, (state, action) => {
+
+                state.isSuccess = true;
+
+                state.message = action.payload.message;
+
+            })
+
+            .addCase(profile.fulfilled, (state, action) => {
+
+                state.isSuccess = true;
+
+                state.user = action.payload;
+
+            });
+
+    },
 
 });
 

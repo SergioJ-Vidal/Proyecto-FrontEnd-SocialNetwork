@@ -12,41 +12,22 @@ const Profile = () => {
 
         <div className="profile">
 
+            <div className="profile-info">
             <h1>Profile</h1>
 
             <p>{user.user.name}</p>
 
             <p>{user.user.email}</p>
+            </div>
+            <div className="user-posts">
+                
+            </div>
 
         </div>
 
+        
     );
 
 };
-
-// export default Profile;
-
-// const Profile = () => {
-//     const dispatch = useDispatch()
-//     dispatch(profile())
-    
-//     const { user } = useSelector((state) => state.auth);
-
-//     return (
-
-//         <div>
-
-//             <h1>Profile</h1>
-
-//             <p>{user.message}</p>
-
-//             <p>{user.email}</p>
-
-//         </div>
-
-
-//     );
-
-// };
 
 export default Profile;

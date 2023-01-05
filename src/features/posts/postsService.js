@@ -28,12 +28,21 @@ const getComments = async (id) => {
     return res.data;
 }
 
+const create = async (postData) => {
+
+    const res = await axios.post(API_URL + "/posts/create", postData);
+
+    return res.data;
+
+};
+
 const postsService = {
 
     getAll,
     getById,
     getPostByName,
-    getComments
+    getComments,
+    create
 
 };
 

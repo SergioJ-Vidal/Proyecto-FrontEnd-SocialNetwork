@@ -7,6 +7,8 @@ const Post = () => {
 
     const { posts } = useSelector((state) => state.posts);
 
+    console.log(posts)
+
     const post = posts.map((post) => {
 
         const name = ((post || {}).userId || {}).name;
@@ -17,7 +19,7 @@ const Post = () => {
 
                 <Link to={"/post/" + post._id}>
 
-                    <p>{post.title}</p>
+                    <p className="post-title">{post.title}</p>
 
                 </Link>
                 

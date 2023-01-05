@@ -8,6 +8,7 @@ import Footer from './components/Footer/Footer';
 import Profile from './components/Profile/Profile';
 import PostDetail from './components/Home/Posts/PostDetail/PostDetail';
 import Search from './components/Search/Search';
+import Publish from './components/Home/Publish/Publish';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path="/profile" element={<Profile/>} />
       <Route path="/search/:postName" element={<Search />} />
       <Route path="/post/:id" element={<PostDetail />} />
+      <Route path="/createPost" element={<Publish />} />
       </Routes>
       <Footer />
       </BrowserRouter>
