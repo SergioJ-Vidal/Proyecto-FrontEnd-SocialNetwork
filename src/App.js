@@ -9,6 +9,7 @@ import Profile from './components/Profile/Profile';
 import PostDetail from './components/Home/Posts/PostDetail/PostDetail';
 import Search from './components/Search/Search';
 import Publish from './components/Home/Publish/Publish';
+import "./App.css"
 
 function App() {
   return (

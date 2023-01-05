@@ -2,6 +2,8 @@ import axios from "axios";
 
 const API_URL = "http://localhost:8080";
 
+const user = JSON.parse(localStorage.getItem("user"));
+
 const getAll = async () => {
 
     const res = await axios.get(API_URL + "/posts/find");
@@ -28,11 +30,19 @@ const getComments = async (id) => {
     return res.data;
 }
 
-const create = async (postData) => {
+const create = async (postData) => {const res = await axios.post(API_URL + "/posts/create",  {
 
-    const res = await axios.post(API_URL + "/posts/create", postData);
+    headers: {
 
-    return res.data;
+        authorization: user.token,
+
+    },
+
+    
+},postData);
+
+return res.data;
+
 
 };
 

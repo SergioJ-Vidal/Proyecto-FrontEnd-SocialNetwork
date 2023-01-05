@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Post from '../../Post/Post'
 import { useDispatch, useSelector } from "react-redux";
 import { getAll, reset } from "../../../features/posts/postsSlice";
@@ -8,7 +8,7 @@ import "./Posts.css"
 const Posts = () => {
     const { isLoading } = useSelector((state) => state.posts);
     const dispatch = useDispatch();
-    const navigate = useNavigate();
+    
     const getAllAndReset = async () => {
 
         await dispatch(getAll());
@@ -32,9 +32,9 @@ const Posts = () => {
 
            <div className='postie'> 
            
-           <h1>Posts</h1>
+           <h1>Foro General</h1>
            
-           <button><Link to="/createPost" >Crear Tema </Link></button>
+           <button className='create-topic'><Link to="/createPost" >Crear Tema </Link></button>
            </div>
 
             <Post />

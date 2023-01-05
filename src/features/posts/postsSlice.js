@@ -112,7 +112,13 @@ export const postsSlice = createSlice({
 
             .addCase(getPostByName.fulfilled, (state, action) => {
                 state.posts = action.payload;
-            });
+            })
+
+            .addCase(createPost.fulfilled, (state, action) => {
+
+                state.isSuccess = true;  
+
+            })
 
     },
 

@@ -1,30 +1,18 @@
 import React from "react";
-import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { create } from "../../../features/posts/postsService";
-import { notification } from "antd";
+import { createPost } from "../../../features/posts/postsSlice";
 
 const Publish = () => {
     const dispatch = useDispatch()
-    const { isSuccess, message } = useSelector((state) => state.auth);
+    const { user } = useSelector((state) => state.auth);
+    console.log(user)
 
-    useEffect(() => {
+    const token = user.token
 
-        if (isSuccess) {
+    console.log(token)
 
-            notification.success({
-
-                message: "Success",
-
-                description: message,
-
-            });
-
-        }
-
-    }, [isSuccess]);
     const onSubmit = (event) => {
-
+     
         event.preventDefault();
 
         const formData = new FormData();
@@ -32,7 +20,7 @@ const Publish = () => {
         formData.set('title', event.target.title.value)
         formData.set('body', event.target.body.value)
 
-        // dispatch(create(formData))
+        dispatch(createPost(formData))
     };
 
     return (
@@ -42,6 +30,7 @@ const Publish = () => {
             <input name="title" placeholder="add title" />
             <input name="body" placeholder="add body" />
             <input type="file" name="image" id="file" className="input-file" />
+            <textarea className="textarea"></textarea>
 
             <button>
                 <input className="input" type="submit" value="Publish" />
