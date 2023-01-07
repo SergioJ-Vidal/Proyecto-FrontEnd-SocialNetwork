@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { useParams, Link } from "react-router-dom";
 import { getById, deletePost } from "../../../../features/posts/postsSlice";
 import "./PostDetail.css"
 
@@ -40,6 +39,9 @@ const PostDetail = () => {
             <div className="comments-details">
 
                 <button onClick={removePost}>Remove</button>
+
+
+                <Link to={"/updatePost/" + id}><button>Update</button></Link>
                 
                 <button>Show Comments</button>
 

@@ -1,10 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { createPost } from "../../../features/posts/postsSlice";
+import { useParams } from "react-router-dom";
+import { update } from "../../../../features/posts/postsSlice";
 
-const Publish = () => {
+const Edit = () => {
     const dispatch = useDispatch()
+
+    const { id } = useParams();
 
     const onSubmit = (event) => {
 
@@ -14,7 +16,8 @@ const Publish = () => {
 
         const postCreated = Object.fromEntries(formData.entries());
 
-        dispatch(createPost(postCreated))
+        dispatch(update(id, postCreated))
+
     };
 
     return (
@@ -25,13 +28,12 @@ const Publish = () => {
             <textarea className="textarea" name="body"></textarea>
 
             <button>
-                <input className="input" type="submit" value="Publish" />
+                <input className="input" type="submit" value="Edit" />
             </button>
         </form>
-        
 
     );
 
 };
 
-export default Publish;
+export default Edit;

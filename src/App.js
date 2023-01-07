@@ -10,6 +10,7 @@ import PostDetail from './components/Home/Posts/PostDetail/PostDetail';
 import Search from './components/Search/Search';
 import Publish from './components/Home/Publish/Publish';
 import "./App.css"
+import Edit from './components/Home/Posts/Edit/Edit';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Route path="/search/:postName" element={<Search />} />
       <Route path="/post/:id" element={<PostDetail />} />
       <Route path="/createPost" element={<Publish />} />
+      <Route path="/updatePost/:id" element={<Edit />} />
       </Routes>
       <Footer />
       </BrowserRouter>

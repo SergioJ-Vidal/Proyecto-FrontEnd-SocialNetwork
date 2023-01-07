@@ -65,6 +65,23 @@ const deletePost = async (id) => {
 
 };
 
+const updatePost = async (id, data) => {
+
+    const res = await axios.put(API_URL + "/posts/update/" + id, data, {
+
+        headers: {
+    
+            authorization: user.token,
+    
+        },
+    
+        
+    });
+
+    return res.data;
+
+};
+
 const postsService = {
 
     getAll,
@@ -72,7 +89,8 @@ const postsService = {
     getPostByName,
     getComments,
     create,
-    deletePost
+    deletePost,
+    updatePost
 
 };
 

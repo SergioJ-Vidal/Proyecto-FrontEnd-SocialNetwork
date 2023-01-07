@@ -93,6 +93,46 @@ export const deletePost = createAsyncThunk(
 
 );
 
+export const update = createAsyncThunk(
+
+    "posts/update",
+
+    async (id, data) => {
+
+        try {
+
+            return await postsService.updatePost(id, data);
+
+        } catch (error) {
+
+            console.error(error);
+
+        }
+
+    }
+
+);
+
+
+export const updatePost = createAsyncThunk(
+
+    "posts/update",
+
+    async (id) => {
+
+        try {
+
+            return await postsService.updatePost(id);
+
+        } catch (error) {
+
+            console.error(error);
+
+        }
+
+    }
+
+);
 
 export const postsSlice = createSlice({
 
