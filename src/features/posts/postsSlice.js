@@ -73,6 +73,26 @@ export const createPost = createAsyncThunk(
 
 );
 
+export const deletePost = createAsyncThunk(
+
+    "posts/delete",
+
+    async (id) => {
+
+        try {
+
+            return await postsService.deletePost(id);
+
+        } catch (error) {
+
+            console.error(error);
+
+        }
+
+    }
+
+);
+
 
 export const postsSlice = createSlice({
 
@@ -112,11 +132,6 @@ export const postsSlice = createSlice({
 
             .addCase(getPostByName.fulfilled, (state, action) => {
                 state.posts = action.payload;
-            })
-
-            .addCase(createPost.fulfilled, (state, action) => {
-
-               
             })
 
     },

@@ -43,10 +43,25 @@ const create = async (postData) => {
         
     })
 
-console.log(res.data);
-
 return res.data;
  
+
+};
+
+const deletePost = async (id) => {
+
+    const res = await axios.delete(API_URL + "/posts/delete/id/" + id, {
+
+        headers: {
+    
+            authorization: user.token,
+    
+        },
+    
+        
+    });
+
+    return res.data;
 
 };
 
@@ -56,7 +71,8 @@ const postsService = {
     getById,
     getPostByName,
     getComments,
-    create
+    create,
+    deletePost
 
 };
 
