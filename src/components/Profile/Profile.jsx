@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./Profile.css"
 
@@ -6,7 +7,30 @@ const Profile = () => {
 
     const { user } = useSelector((state) => state.auth);
 
-    console.log (user)
+    console.log(user)
+
+    const userPosts = user.user.posts
+
+    console.log (userPosts)
+
+    const postRender = userPosts.map((post) => {
+
+        const name = ((post || {}).userId || {}).name;
+
+        return (
+
+            <div className="post" key={post.id}>
+
+                <Link to={"/post/" + post._id}>
+
+                    <p className="post-title">{post.title}</p>
+
+                </Link>
+
+            </div>
+        );
+
+    });
 
     return (
 
@@ -20,7 +44,8 @@ const Profile = () => {
             <p>{user.user.email}</p>
             </div>
             <div className="user-posts">
-                
+                Posts
+                {postRender}
             </div>
 
         </div>

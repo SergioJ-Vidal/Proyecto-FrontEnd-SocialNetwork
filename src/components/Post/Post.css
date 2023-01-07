@@ -14,9 +14,11 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border-bottom: solid black;
+    border: solid black;
+    border-radius: 5px;
     width: 100%;
     font-size: 1.6em;
+    background-color: white;
 }
 
 a {

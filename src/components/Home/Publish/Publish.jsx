@@ -4,23 +4,16 @@ import { createPost } from "../../../features/posts/postsSlice";
 
 const Publish = () => {
     const dispatch = useDispatch()
-    const { user } = useSelector((state) => state.auth);
-    console.log(user)
-
-    const token = user.token
-
-    console.log(token)
 
     const onSubmit = (event) => {
-     
+
         event.preventDefault();
 
-        const formData = new FormData();
-        if (event.target.image.files[0]) formData.set('image', event.target.image.files[0]);
-        formData.set('title', event.target.title.value)
-        formData.set('body', event.target.body.value)
+        const formData = new FormData(event.target);
 
-        dispatch(createPost(formData))
+        const postCreated = Object.fromEntries(formData.entries());
+
+        dispatch(createPost(postCreated))
     };
 
     return (
@@ -28,9 +21,7 @@ const Publish = () => {
         <form onSubmit={onSubmit}>
 
             <input name="title" placeholder="add title" />
-            <input name="body" placeholder="add body" />
-            <input type="file" name="image" id="file" className="input-file" />
-            <textarea className="textarea"></textarea>
+            <textarea className="textarea" name="body"></textarea>
 
             <button>
                 <input className="input" type="submit" value="Publish" />

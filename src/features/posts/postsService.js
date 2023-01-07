@@ -6,7 +6,7 @@ const user = JSON.parse(localStorage.getItem("user"));
 
 const getAll = async () => {
 
-    const res = await axios.get(API_URL + "/posts/find");
+    const res = await axios.get(API_URL + "/posts/find?limit=10&page=1");
 
     return res.data;
 
@@ -30,19 +30,23 @@ const getComments = async (id) => {
     return res.data;
 }
 
-const create = async (postData) => {const res = await axios.post(API_URL + "/posts/create",  {
-
-    headers: {
-
-        authorization: user.token,
-
-    },
-
+const create = async (postData) => {
     
-},postData);
+    const res = await axios.post(API_URL + "/posts/create",postData,{
+
+        headers: {
+    
+            authorization: user.token,
+    
+        },
+    
+        
+    })
+
+console.log(res.data);
 
 return res.data;
-
+ 
 
 };
 

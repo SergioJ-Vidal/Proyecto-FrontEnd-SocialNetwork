@@ -1,8 +1,9 @@
 .header-container {
     display: flex;
     justify-content: space-around;
-    background-color: grey;
-    width: 100vw;
+    background-color: white;
+    width: 100%;
+    box-shadow: 0px 7px 13px 0px rgba(133,127,127,0.75);
 }
 
 .nav-container {

@@ -34,7 +34,7 @@ const Posts = () => {
            
            <h1>Foro General</h1>
            
-           <button className='create-topic'><Link to="/createPost" >Crear Tema </Link></button>
+           <Link to="/createPost" ><button className='create-topic'>Crear Tema</button></Link>
            </div>
 
             <Post />
