@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
 import postsService from "./postsService";
 
 const initialState = {
@@ -123,6 +122,26 @@ export const updatePost = createAsyncThunk(
         try {
 
             return await postsService.updatePost(id);
+
+        } catch (error) {
+
+            console.error(error);
+
+        }
+
+    }
+
+);
+
+export const likePosts = createAsyncThunk(
+
+    "posts/like",
+
+    async (id, userId) => {
+
+        try {
+
+            return await postsService.likePost(id, userId);
 
         } catch (error) {
 

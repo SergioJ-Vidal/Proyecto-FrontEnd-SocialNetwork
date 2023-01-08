@@ -11,8 +11,6 @@ const Profile = () => {
 
     const userPosts = user.user.posts
 
-    console.log (userPosts)
-
     const postRender = userPosts.map((post) => {
 
         const name = ((post || {}).userId || {}).name;

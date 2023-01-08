@@ -31,8 +31,7 @@ const Posts = () => {
         <div className='body-post'>
 
            <div className='postie'> 
-           
-           <h1>Foro General</h1>
+           <span className='title'>Foro General</span>
            
            <Link to="/createPost" ><button className='create-topic'>Crear Tema</button></Link>
            </div>

@@ -82,6 +82,22 @@ const updatePost = async (id, data) => {
 
 };
 
+const likePost = async (id, userId) => {
+
+    const res = await axios.put(API_URL + "/posts/update/" + id, userId, {
+
+        headers: {
+    
+            authorization: user.token,
+    
+        },
+         
+    });
+
+    return res.data;
+
+};
+
 const postsService = {
 
     getAll,
@@ -90,7 +106,8 @@ const postsService = {
     getComments,
     create,
     deletePost,
-    updatePost
+    updatePost,
+    likePost
 
 };
 

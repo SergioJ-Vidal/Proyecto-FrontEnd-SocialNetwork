@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import logo from "../../assets/images/mail.png"
+import bubble from "../../assets/images/bubble.png"
 import "./Post.css"
 
 const Post = () => {
@@ -15,21 +17,34 @@ const Post = () => {
 
             <div className="post" key={post.id}>
 
+                <div className="icon">
+                <img src={logo} className="logo" alt="mailpost"></img>
+                </div>
+
+                <div className="post-details">
                 <Link to={"/post/" + post._id}>
 
                     <p className="post-title">{post.title}</p>
 
                 </Link>
+
                 
-                    <span>{name}</span>
+                    <span className="nickname">{name}</span>
+                </div>
+
+                <div className="commentaries">
+                <img src={bubble} className="logo" alt="bubble"></img>
+                </div>    
 
             </div>
         );
 
     });
 
-    return <div className="main-post">{post}</div>;
-
+    return <div className="main-post">
+        <div className="posts-header">Hilos</div>
+        <div className="post-map">{post}</div>
+        </div>
 };
 
 export default Post;

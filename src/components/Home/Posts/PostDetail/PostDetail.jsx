@@ -1,28 +1,50 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, Link } from "react-router-dom";
-import { getById, deletePost } from "../../../../features/posts/postsSlice";
+import { getById, deletePost, likePosts } from "../../../../features/posts/postsSlice";
 import "./PostDetail.css"
 
 const PostDetail = () => {
 
     const { id } = useParams();
-
-    const dispatch = useDispatch();
-
-    const { post } = useSelector((state) => state.posts);
-
-    const removePost = () => {
-
-        dispatch(deletePost(id));
-
-    }
-
     useEffect(() => {
 
         dispatch(getById(id));
 
     }, []);
+    const { post } = useSelector((state) => state.posts);
+    const { user } = useSelector((state) => state.auth);
+
+    const commentsArray = post.comments
+
+    console.log(post)
+    console.log(commentsArray)
+
+    const dispatch = useDispatch();
+    const removePost = () => { dispatch(deletePost(id)) }
+    const giveLike = () => { dispatch(likePosts(id, user.user._id)) }
+
+
+    // const comment = commentsArray.map((comment) => {
+
+    //     const name = ((comment || {}).userId || {}).name;
+
+    //     return (
+
+    //         <div className="post" key={comment.id}>
+
+    //             <Link to={"/post/" + comment._id}>
+
+    //                 <p className="post-title">{comment.title}</p>
+
+    //             </Link>
+
+    //             <span>{name}</span>
+
+    //         </div>
+    //     );
+
+    // });
 
     return (
 
@@ -38,15 +60,18 @@ const PostDetail = () => {
 
             <div className="comments-details">
 
-                <button onClick={removePost}>Remove</button>
+                <Link to={"/"}><button onClick={removePost}>Remove</button></Link>
 
+                <button onClick={giveLike}>Dar Like</button>
 
                 <Link to={"/updatePost/" + id}><button>Update</button></Link>
-                
-                <button>Show Comments</button>
+
 
             </div>
 
+            <div className="comments">
+               AQUI COMMENTS
+            </div>
         </div>
 
     );

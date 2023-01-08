@@ -5,13 +5,26 @@
     align-items: center;
     background-color: #f5f5f5;
     width: 100%;
+    padding: 2em;
+    gap: 2em;
+}
+
+.main-post{
+  width: 80%;
+}
+
+.title {
+  font-size: 3em;
 }
 
 .postie {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
+    width: 80%;
+    padding: 1em;
+    background-color: white;
+    border-radius: 6px;
 }
 
 .create-topic {
@@ -46,6 +59,6 @@
   transition: box-shadow .2s;
 }
 
-.button-42:hover {
+.create-topic:hover {
   box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
 }
