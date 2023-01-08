@@ -3,9 +3,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: solid black 1px;
+    background-color: white;
     border-radius: 8px;
-    width: 50vw;
+    width: 80%;
 }
 
 .post-detail-box {
@@ -13,7 +13,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #f5f5f5;
+    margin-top: 2em;
 }
 
 h1 {

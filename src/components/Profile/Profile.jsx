@@ -17,7 +17,7 @@ const Profile = () => {
 
         return (
 
-            <div className="post" key={post.id}>
+            <div className="postProfile" key={post.id}>
 
                 <Link to={"/post/" + post._id}>
 
@@ -32,6 +32,8 @@ const Profile = () => {
 
     return (
 
+        <div className="profile-view">
+        
         <div className="profile">
 
             <div className="profile-info">
@@ -45,7 +47,7 @@ const Profile = () => {
                 Posts
                 {postRender}
             </div>
-
+            </div>
         </div>
 
         

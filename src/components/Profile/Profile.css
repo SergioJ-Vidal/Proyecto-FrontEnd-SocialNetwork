@@ -1,9 +1,16 @@
 .profile {
     background-color: white;
-    width: 85%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: solid black;
+    border-radius: 5px;
+}
+
+.profile-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
 }
