@@ -29,14 +29,14 @@ const Login = () => {
 
     }
 
-    
+
     const [loading, setLoading] = useState(false);
     const [open, setOpen] = useState(false);
-    
+
     const showModal = () => {
         setOpen(true);
     };
-    
+
     const handleOk = () => {
         setLoading(true);
         setTimeout(() => {
@@ -84,30 +84,9 @@ const Login = () => {
                         initialValues={{
                             remember: true,
                         }}
-        
+
                         autoComplete="off">
 
-                        <input type="email" name="email" value={email} onChange={onChange} />
-
-                        <input type="password" name="password" value={password} onChange={onChange} />
-
-                    </form>
-
-
-                    {/* <Form className="form-container" id="myform" name="basic"
-                        labelCol={{
-                            span: 8,
-                        }}
-                        wrapperCol={{
-                            span: 16,
-                        }}
-                        initialValues={{
-                            remember: true,
-                        }}
-                        onFinish={onFinish}
-                        onSubmit={onSubmit}
-                        autoComplete="off"
-                    >
                         <Form.Item label="Email" name="email"
                             rules={[
                                 {
@@ -117,16 +96,17 @@ const Login = () => {
                                 },
                             ]}
                         >
-                            <Input onChange={onChange} value={email}/>
+                            <Input type="email" name="email" value={email} onChange={onChange} />
                         </Form.Item>
 
                         <Form.Item label="Password" name="password"
                             rules={[{ required: true, message: "Please input your password!" }
                             ]}
                         >
-                            <Input.Password  onChange={onChange} value={password}/>
+                            <Input type="password" name="password" value={password} onChange={onChange} />
                         </Form.Item>
-                    </Form> */}
+
+                    </form>
                 </div>
             </Modal>
 

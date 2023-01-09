@@ -11,16 +11,13 @@ const PostDetail = () => {
     const { id } = useParams();
     const { post } = useSelector((state) => state.posts);
     const { user } = useSelector((state) => state.auth);
-    const { postComments } = useSelector((state) =>state.comments);
-
-    console.log(postComments)
+    const comments = post.comments
 
     const dispatch = useDispatch();
     
     useEffect(() => {
 
         dispatch(getById(id));
-        // dispatch(getByPost(id))
 
     }, []);
 
@@ -28,7 +25,7 @@ const PostDetail = () => {
     const giveLike = () => { dispatch(likePosts(id, user.user._id)) }
 
 
-    // const comment = commentsArray.map((comment) => {
+    // const comment = comments.map((comment) => {
 
     //     const name = ((comment || {}).userId || {}).name;
 

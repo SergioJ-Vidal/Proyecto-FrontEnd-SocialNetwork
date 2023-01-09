@@ -6,7 +6,7 @@ const user = JSON.parse(localStorage.getItem("user"));
 
 const getAll = async () => {
 
-    const res = await axios.get(API_URL + "/posts/find?limit=10&page=1");
+    const res = await axios.get(API_URL + "/posts/find?limit=20&page=1");
 
     return res.data;
 

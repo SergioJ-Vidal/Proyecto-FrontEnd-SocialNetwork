@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Dash";
+    src: url("../../assets/fonts/Mont-ExtraLightDEMO.otf");
+}
+
 .main-post {
     display: flex;
     justify-content: center;
@@ -12,7 +17,8 @@
     width: 100%;
     color: white;
     font-size: 2em;
-    padding-left: 2em;
+    display: flex;
+    justify-content: center;
 }
 
 .post-map{
@@ -37,6 +43,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: "Dash";
 }
 
 .icon {

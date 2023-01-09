@@ -48,9 +48,9 @@ const logout = async () => {
 
 };
 
-const profile = async (userData) => {
+const profile = async (id) => {
 
-    const res = await axios.get(API_URL + '/users/findId', userData)
+    const res = await axios.get(API_URL + '/users/findId'+ id)
 
     return res.data
 }

@@ -3,9 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../features/auth/authSlice";
 import { useState } from "react";
 import logo from "../../assets/images/logo.png"
-import { Menu } from "antd";
-import { UserOutlined } from "@ant-design/icons"
-import "./Header.css"
+import "./Header.scss"
 
 import Login from "../Login/Login";
 import Register from "../Register/Register";
@@ -35,7 +33,7 @@ const Header = () => {
 
         dispatch(logout());
 
-        navigate("/login");
+        navigate("/");
 
     };
 
@@ -51,9 +49,12 @@ const Header = () => {
                             <img src={logo} className="logo" alt="logo"></img></a>
                     </div>
 
-                    <input onKeyUp={handleChange} placeholder="search post" name="text" />
+                    <div class="form__group field">
+                        <input onKeyUp={handleChange} type="input" class="form__field" placeholder="Search" name="text" />
+                        <label for="name" class="form__label">Search Post</label>
+                    </div>
 
-                    <div>
+                    <div className="header-options">
 
                         {user ? <>
 

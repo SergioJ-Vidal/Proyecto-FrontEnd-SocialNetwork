@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { update } from "../../../../features/posts/postsSlice";
+import { updateThread } from "../../../../features/posts/postsSlice";
 
 const Edit = () => {
     
@@ -19,7 +19,7 @@ const Edit = () => {
 
         console.log(postCreated)
 
-        dispatch(update(id, postCreated))
+        dispatch(updateThread(id, postCreated))
 
     };
 

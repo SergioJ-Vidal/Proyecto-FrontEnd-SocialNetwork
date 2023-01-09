@@ -9,6 +9,8 @@ const Post = () => {
 
     const { posts } = useSelector((state) => state.posts);
 
+    console.log(posts)
+
     const post = posts.map((post) => {
 
         const name = ((post || {}).userId || {}).name;

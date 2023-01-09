@@ -113,15 +113,15 @@ export const update = createAsyncThunk(
 );
 
 
-export const updatePost = createAsyncThunk(
+export const updateThread = createAsyncThunk(
 
     "posts/update",
 
-    async (id) => {
+    async (id, data) => {
 
         try {
 
-            return await postsService.updatePost(id);
+            return await postsService.updatePost(id, data);
 
         } catch (error) {
 
@@ -192,6 +192,22 @@ export const postsSlice = createSlice({
             .addCase(getPostByName.fulfilled, (state, action) => {
                 state.posts = action.payload;
             })
+
+            .addCase(updateThread.fulfilled, (state, action) => {
+                const posts = state.posts.map((post) => {
+                    if (post._id === action.payload.post._id) {
+                      post = action.payload.post;
+                    }
+                    return post;
+                  });
+                  state.posts = posts;
+          
+            })
+
+            .addCase(deletePost.fulfilled, (state, action) => {
+                state.post = action.payload;
+            })
+
 
     },
 
