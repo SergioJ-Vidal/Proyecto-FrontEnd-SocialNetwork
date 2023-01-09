@@ -54,7 +54,12 @@
 
 .commentaries {
     border-left: solid black 1px;
-    padding: 0.8em;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:0.5rem;
 }
 
 a {
@@ -70,6 +75,7 @@ a:hover {
     font-weight: bold;
     color: rgba(206, 70, 25, 0.781);
     font-size: 1.6rem;
+    font-family: "Dash";
 }
 
 .mapost-img{

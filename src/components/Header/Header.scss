@@ -1,25 +1,24 @@
 .header-container {
-    display: flex;
-    justify-content: space-around;
-    background-color: white;
-    width: 100%;
-    box-shadow: -1px 11px 23px -15px rgba(0,0,0,0.75)
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  width: 100%;
+  box-shadow: -1px 11px 23px -15px rgba(0, 0, 0, 0.75)
 }
 
 .nav-container {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.user-img{
-    width: 5vw;
+.user-img {
+  width: 5vw;
 }
 
-.avatar-div{
-  background-color: black;
+.avatar-div {
   border-radius: 200px;
   width: 50%;
   display: flex;
@@ -28,25 +27,26 @@
 }
 
 .nav-main {
-    display: flex;
-    justify-content: space-between;
-    width: 100vw;
-    padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  padding: 1em;
 }
 
 .logo {
-    width: 10vw;
+  width: 10vw;
 }
 
 .header-options {
-    display: flex;
-    gap: 2em;
+  display: flex;
+  gap: 2em;
 }
 
 $primary: #F47340;
 $secondary: #F9D371;
 $white: #fff;
 $gray: #9b9b9b;
+
 .form__group {
   position: relative;
   padding: 15px 0 0;
@@ -70,7 +70,7 @@ $gray: #9b9b9b;
     color: transparent;
   }
 
-  &:placeholder-shown ~ .form__label {
+  &:placeholder-shown~.form__label {
     font-size: 1.3rem;
     cursor: text;
     top: 20px;
@@ -87,24 +87,30 @@ $gray: #9b9b9b;
 }
 
 .form__field:focus {
-    .form__label {
+  .form__label {
     position: absolute;
     top: 0;
     display: block;
     transition: 0.2s;
     font-size: 1rem;
     color: $primary;
-    font-weight:700;    
+    font-weight: 700;
   }
-  padding-bottom: 6px;  
+
+  padding-bottom: 6px;
   font-weight: 700;
   border-width: 3px;
-  border-image: linear-gradient(to right, $primary,$secondary);
+  border-image: linear-gradient(to right, $primary, $secondary);
   border-image-slice: 1;
 }
+
 /* reset input */
-.form__field{
-  &:required,&:invalid { box-shadow:none; }
+.form__field {
+
+  &:required,
+  &:invalid {
+    box-shadow: none;
+  }
 }
 
 .search-input {

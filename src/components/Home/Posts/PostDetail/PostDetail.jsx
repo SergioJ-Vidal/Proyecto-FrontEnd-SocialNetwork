@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 import { getById, deletePost, likePosts } from "../../../../features/posts/postsSlice";
-import { ShopFilled } from "@ant-design/icons";
+import { Button } from 'antd';
+import { LikeOutlined, EditOutlined, DeleteOutlined, CommentOutlined } from "@ant-design/icons";
 import "./PostDetail.scss"
 
 const PostDetail = () => {
@@ -33,11 +34,11 @@ const PostDetail = () => {
 
             <div className="comment" key={comment.id}>
                 <div className="comments-userinfo">
-                <img src={avatarComment} className="user-imgPost" alt="userimg"></img>
-                <span>{name}</span>
+                    <img src={avatarComment} className="user-imgPost" alt="userimg"></img>
+                    <span className="nickname-posts">{name}</span>
                 </div>
                 <div className="comments-body">
-                <p className="comment-title">{comment.body}</p>
+                    <p className="comment-title">{comment.body}</p>
                 </div>
             </div>
         );
@@ -51,16 +52,24 @@ const PostDetail = () => {
 
         <div className="post-detail-box">
 
-            <h1>{post.title}</h1>
+            <h1 className="post-titles-header">{post.title}</h1>
 
             <div className="post-detail">
                 <div className="user-details">
                     <img src={imageUrl} className="user-imgPost" alt="userimg"></img>
-                    <p>{name}</p>
+                    <Link to="/profile"><p className="nick-creator">{name}</p></Link>
                 </div>
 
                 <div className="body-postDetail">
                     <p>{post.body}</p>
+                </div>
+                <div className="button-details">
+
+                    <Link to={"/"}><Button onClick={removePost} icon={<DeleteOutlined />}>Remove</Button></Link>
+                    <Link to={"/commentPost/" + id}><Button icon={<CommentOutlined />}>Comentar</Button></Link>
+                    <Button onClick={giveLike} icon={<LikeOutlined />}>Dar Like</Button>
+                    <Link to={"/updatePost/" + id}><Button icon={<EditOutlined />}>Update</Button></Link>
+
                 </div>
             </div>
 
@@ -68,14 +77,6 @@ const PostDetail = () => {
                 {comment}
             </div>
 
-            <div className="button-details">
-
-                <Link to={"/"}><button onClick={removePost}>Remove</button></Link>
-                <Link to={"/commentPost/" + id}><button icon={<ShopFilled />}>Comentar</button></Link>
-                <button onClick={giveLike}>Dar Like</button>
-                <Link to={"/updatePost/" + id}><button icon={<ShopFilled />}>Update</button></Link>
-
-            </div>
 
         </div>
 

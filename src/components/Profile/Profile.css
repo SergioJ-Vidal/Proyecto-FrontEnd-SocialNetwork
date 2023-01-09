@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "Dash";
+    src: url("../../assets/fonts/Mont-HeavyDEMO.otf");
+}
+
+@font-face {
+    font-family: "Dashy";
+    src: url("../../assets/fonts/Mont-ExtraLightDEMO.otf");
+}
+
 .profile {
     background-color: white;
     width: 70%;
@@ -25,4 +35,32 @@
 
 .userimg{
     width: 30%;
+}
+
+.postProfile{
+    background-color: white;
+    width: 80%;
+    border-radius: 8px;
+}
+
+.own-posts{
+    font-family: "Dash";
+}
+
+.profile-name{
+    font-family: "Dashy";
+}
+
+.user-posts{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.postProfile{
+    width: 100%;
+    text-align: center;
 }

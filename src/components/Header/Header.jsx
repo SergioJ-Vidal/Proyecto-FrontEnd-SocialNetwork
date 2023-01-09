@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../features/auth/authSlice";
-import { Button, Menu } from 'antd';
+import { Button } from 'antd';
 import Login from "../Login/Login";
 import logo from "../../assets/images/forum-logo.png"
 import "./Header.scss"
@@ -50,7 +50,7 @@ const Header = () => {
 
                     <div class="form__group field">
                         <input onKeyUp={handleChange} type="input" class="form__field" placeholder="Search" name="text" />
-                        <label for="name" class="form__label">Search Post</label>
+                        <label for="name" class="form__label">Buscar hilos</label>
                     </div>
 
 
@@ -59,13 +59,12 @@ const Header = () => {
 
                         {user ? <>
 
-                            <span><Link to="/" onClick={onLogout}>Logout</Link></span>
-
-
                             <div className="avatar-div">
                                 <a href="http://localhost:3000/profile" rel="noopener noreferrer" title="facebook">
-                                    <img src={logo} className="user-img" alt="facebook"></img></a>
+                                    <Button className="span-profile">Perfil</Button></a>
                             </div>
+
+                            <Button className="span-logout"><Link to="/" onClick={onLogout}>Logout</Link></Button>
 
 
                         </>
@@ -76,7 +75,7 @@ const Header = () => {
 
                                 <Login />
 
-                                <Button><Link to="/register">Register</Link></Button>
+                                <Button><Link to="/register">Registrase</Link></Button>
 
                             </>
 

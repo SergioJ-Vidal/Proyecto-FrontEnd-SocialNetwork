@@ -39,15 +39,16 @@ const Profile = () => {
             <div className="profile">
 
                 <div className="profile-info">
-                    <h1>{user.user.name}</h1>
+                    <h1 className="profile-name">{user.user.name}</h1>
 
                     <img src={imageUrl} className="userimg" alt="userimg"></img>
 
                     <p>{user.user.email}</p>
+                    <p>{user.user.age} Años</p>
                 </div>
             </div>
             <div className="user-posts">
-                <h2>Tus Posts</h2>
+                <h2 className="own-posts">Tus Posts</h2>
                 {postRender}
             </div>
         </div>
