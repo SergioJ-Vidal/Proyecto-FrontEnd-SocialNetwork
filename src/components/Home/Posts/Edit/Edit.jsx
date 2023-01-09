@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { update } from "../../../../features/posts/postsSlice";
 
 const Edit = () => {
+    
     const dispatch = useDispatch()
 
     const { id } = useParams();
@@ -15,6 +16,8 @@ const Edit = () => {
         const formData = new FormData(event.target);
 
         const postCreated = Object.fromEntries(formData.entries());
+
+        console.log(postCreated)
 
         dispatch(update(id, postCreated))
 

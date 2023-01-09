@@ -1,26 +1,29 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, Link } from "react-router-dom";
+import { getByPost } from "../../../../features/comments/commentsSlice";
 import { getById, deletePost, likePosts } from "../../../../features/posts/postsSlice";
 import "./PostDetail.css"
 
 const PostDetail = () => {
 
+    
     const { id } = useParams();
+    const { post } = useSelector((state) => state.posts);
+    const { user } = useSelector((state) => state.auth);
+    const { postComments } = useSelector((state) =>state.comments);
+
+    console.log(postComments)
+
+    const dispatch = useDispatch();
+    
     useEffect(() => {
 
         dispatch(getById(id));
+        // dispatch(getByPost(id))
 
     }, []);
-    const { post } = useSelector((state) => state.posts);
-    const { user } = useSelector((state) => state.auth);
 
-    const commentsArray = post.comments
-
-    console.log(post)
-    console.log(commentsArray)
-
-    const dispatch = useDispatch();
     const removePost = () => { dispatch(deletePost(id)) }
     const giveLike = () => { dispatch(likePosts(id, user.user._id)) }
 
@@ -70,7 +73,7 @@ const PostDetail = () => {
             </div>
 
             <div className="comments">
-               AQUI COMMENTS
+               {/* {comment} */}
             </div>
         </div>
 
