@@ -37,6 +37,7 @@ const Header = () => {
 
         // const imageUrl = "http://localhost:8080/images/users/" + user.user.image;
 
+
     return (
 
         <div className="header-container">

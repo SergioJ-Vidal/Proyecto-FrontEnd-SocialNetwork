@@ -14,8 +14,23 @@
     align-items: center;
     justify-content: center;
     margin-top: 2em;
+    gap: 1em;
 }
 
 h1 {
     border-bottom: solid black 1px;
+}
+
+.user-imgPost{
+    width: 18%;
+}
+
+.comment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    width: 80vw;
 }
