@@ -6,26 +6,28 @@ import { createPost } from "../../../features/posts/postsSlice";
 import "./Publish.css"
 
 const Publish = () => {
-
+    console.log()
     const { TextArea } = Input;
 
     const dispatch = useDispatch()
 
-    const onSubmit = (event) => {
-
+    const onSubmit = async (event) => {
+        console.log("hola")
+        console.log(event)
         event.preventDefault();
 
         const formData = new FormData(event.target);
 
         const postCreated = Object.fromEntries(formData.entries());
 
-        dispatch(createPost(postCreated))
+        console.log(postCreated)
+
+         await dispatch(createPost(postCreated))
     };
 
     return (
 
         <div className="form-topic">
-
 
         <form onSubmit={onSubmit} className="form-send">
 
@@ -35,7 +37,7 @@ const Publish = () => {
             
             <TextArea rows={4} className="textarea" name="body" resize="none"/>
 
-            <Link to="/profile" ><input className="input-create" type="submit" value="Publicar" /></Link>
+            <input className="input-create" type="submit" value="Publicar" />
             
         </form>
         

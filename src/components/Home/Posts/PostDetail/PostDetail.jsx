@@ -1,20 +1,21 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, Link } from "react-router-dom";
-
 import { getById, deletePost, likePosts } from "../../../../features/posts/postsSlice";
+import { Menu } from "antd";
+import { HomeOutlined, ShopFilled, ShoppingCartOutlined, UserOutlined } from "@ant-design/icons";
 import "./PostDetail.css"
 
 const PostDetail = () => {
 
-    
+
     const { id } = useParams();
     const { post } = useSelector((state) => state.posts);
     const { user } = useSelector((state) => state.auth);
     const comments = post.comments
 
     const dispatch = useDispatch();
-    
+
     useEffect(() => {
 
         dispatch(getById(id));
@@ -22,29 +23,29 @@ const PostDetail = () => {
     }, []);
 
     const removePost = () => { dispatch(deletePost(id)) }
-    const giveLike = () => { dispatch(likePosts(id, user.user._id)) }
+    const giveLike = () => { dispatch(likePosts(id)) }
 
+    
+    const comment = comments?.map((comment) => {
 
-    // const comment = comments.map((comment) => {
+        const name = ((comment || {}).userId || {}).name;
 
-    //     const name = ((comment || {}).userId || {}).name;
+        return (
 
-    //     return (
+            <div className="post" key={comment.id}>
 
-    //         <div className="post" key={comment.id}>
+                <Link to={"/post/" + comment._id}>
 
-    //             <Link to={"/post/" + comment._id}>
+                    <p className="post-title">{comment.title}</p>
 
-    //                 <p className="post-title">{comment.title}</p>
+                </Link>
 
-    //             </Link>
+                <span>{name}</span>
 
-    //             <span>{name}</span>
+            </div>
+        );
 
-    //         </div>
-    //     );
-
-    // });
+    });
 
     return (
 
@@ -64,13 +65,13 @@ const PostDetail = () => {
 
                 <button onClick={giveLike}>Dar Like</button>
 
-                <Link to={"/updatePost/" + id}><button>Update</button></Link>
-
+                <Link to={"/updatePost/" + id}><button icon={<ShopFilled />}>Update</button></Link>
 
             </div>
 
+
             <div className="comments">
-               {/* {comment} */}
+                {comment}
             </div>
         </div>
 

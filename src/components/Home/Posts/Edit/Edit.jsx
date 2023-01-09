@@ -1,13 +1,18 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams, Link } from "react-router-dom";
+import { Input } from 'antd';
 import { updateThread } from "../../../../features/posts/postsSlice";
+import "./Edit.scss"
 
 const Edit = () => {
-    
+    const { TextArea } = Input;
+
     const dispatch = useDispatch()
 
     const { id } = useParams();
+
+    const { post } = useSelector((state) => state.posts);
 
     const onSubmit = (event) => {
 
@@ -19,21 +24,30 @@ const Edit = () => {
 
         console.log(postCreated)
 
-        dispatch(updateThread(id, postCreated))
+        const test = {id, postCreated}
+
+        console.log(test)
+
+        dispatch(updateThread(test))
 
     };
 
     return (
 
-        <form onSubmit={onSubmit}>
+        <div className="form-container">
 
-            <input name="title" placeholder="add title" />
-            <textarea className="textarea" name="body"></textarea>
+        <form onSubmit={onSubmit} className="form-send">
 
-            <button>
-                <input className="input" type="submit" value="Edit" />
-            </button>
+            <span className="form-header">Editar tema</span>
+
+            <Input name="title" placeholder="Título"  />
+            
+            <TextArea rows={4} className="textarea" name="body" resize="none" />
+
+            <input className="input-create" type="submit" value="Publicar" />
+            
         </form>
+        </div>
 
     );
 

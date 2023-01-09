@@ -65,9 +65,9 @@ const deletePost = async (id) => {
 
 };
 
-const updatePost = async (id, data) => {
-
-    const res = await axios.put(API_URL + "/posts/update/" + id, data, {
+const updatePost = async (test) => {
+    
+    const res = await axios.put(API_URL + "/posts/update/" + test.id, test.postCreated, {
 
         headers: {
     
@@ -75,16 +75,15 @@ const updatePost = async (id, data) => {
     
         },
     
-        
     });
-
+    console.log(res.data)
     return res.data;
 
 };
 
-const likePost = async (id, userId) => {
+const likePost = async (id) => {
 
-    const res = await axios.put(API_URL + "/posts/update/" + id, userId, {
+    const res = await axios.put(API_URL + "/posts/givelike/" + id, {},  {
 
         headers: {
     

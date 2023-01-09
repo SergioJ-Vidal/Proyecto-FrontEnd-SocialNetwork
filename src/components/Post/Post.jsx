@@ -17,11 +17,9 @@ const Post = () => {
 
         const comments = ((post || {})).comments;
 
-        console.log(comments.length)
-
         return (
 
-            <div className="post" key={post.id}>
+            <div className="post" key={post._id}>
 
                 <div className="icon">
                 <img src={logo} className="logo" alt="mailpost"></img>

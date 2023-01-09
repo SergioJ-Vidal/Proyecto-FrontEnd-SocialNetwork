@@ -117,11 +117,11 @@ export const updateThread = createAsyncThunk(
 
     "posts/update",
 
-    async (id, data) => {
-
+    async (test) => {
+        console.log(test)
         try {
 
-            return await postsService.updatePost(id, data);
+            return await postsService.updatePost(test);
 
         } catch (error) {
 
@@ -137,11 +137,11 @@ export const likePosts = createAsyncThunk(
 
     "posts/like",
 
-    async (id, userId) => {
-
+    async (id) => {
+        
         try {
 
-            return await postsService.likePost(id, userId);
+            return await postsService.likePost(id);
 
         } catch (error) {
 
