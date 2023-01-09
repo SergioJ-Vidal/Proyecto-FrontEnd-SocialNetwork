@@ -15,6 +15,10 @@ const Post = () => {
 
         const name = ((post || {}).userId || {}).name;
 
+        const comments = ((post || {})).comments;
+
+        console.log(comments.length)
+
         return (
 
             <div className="post" key={post.id}>
@@ -36,6 +40,7 @@ const Post = () => {
 
                 <div className="commentaries">
                 <img src={bubble} className="logo" alt="bubble"></img>
+                <span>{comments.length}</span>
                 </div>    
 
             </div>
