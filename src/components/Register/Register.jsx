@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { register } from "../../features/auth/authSlice";
-import { notification } from "antd";
+import { Input, notification } from "antd";
+import "./Register.scss"
 
 const Register = () => {
     const dispatch = useDispatch()
@@ -23,6 +24,7 @@ const Register = () => {
         }
 
     }, [isSuccess]);
+
     const onSubmit = (event) => {
 
         event.preventDefault();
@@ -39,18 +41,23 @@ const Register = () => {
 
     return (
 
-        <form onSubmit={onSubmit}>
+        <div className="register-div">
 
-            <input name="name" placeholder="add name" />
-            <input name="email" placeholder="add email" />
-            <input type="file" name="image" id="file" className="input-file" />
-            <input type="number" name="age" placeholder="add age" />
-            <input type="password" name="password" placeholder="password" />
+        <form className="register-form" onSubmit={onSubmit}>
 
-            <button>
-                <input className="input" type="submit" value="Register" />
-            </button>
+            <h1>Registra tu Usuario</h1>
+
+            <Input name="name" placeholder="add name" />
+            <Input name="email" placeholder="add email" />
+            <Input type="number" name="age" placeholder="add age" />
+            <Input type="password" name="password" placeholder="password" />
+            <Input type="file" name="image" id="file" className="input-file" />
+
+                <Input className="input" type="submit" value="Register" />
+
         </form>
+
+        </div>
 
     );
 

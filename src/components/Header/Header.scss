@@ -14,10 +14,23 @@
     justify-content: space-between;
 }
 
+.user-img{
+    width: 10vw;
+}
+
+.avatar-div{
+  background-color: black;
+  border-radius: 200px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .nav-main {
     display: flex;
     justify-content: space-between;
-    width: 80vw;
+    width: 100vw;
     padding: 1em;
 }
 

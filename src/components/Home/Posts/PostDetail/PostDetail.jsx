@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, Link } from "react-router-dom";
-import { getByPost } from "../../../../features/comments/commentsSlice";
+
 import { getById, deletePost, likePosts } from "../../../../features/posts/postsSlice";
 import "./PostDetail.css"
 

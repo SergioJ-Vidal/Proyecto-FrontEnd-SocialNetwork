@@ -1,0 +1,18 @@
+.register-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.register-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    gap:2em;
+    background-color: white;
+    border-radius: 8px;
+    padding: 2em;
+}

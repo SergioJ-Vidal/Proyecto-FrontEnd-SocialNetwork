@@ -35,7 +35,7 @@ const Publish = () => {
             
             <TextArea rows={4} className="textarea" name="body" resize="none"/>
 
-            <input className="input-create" type="submit" value="Publicar" />
+            <Link to="/profile" ><input className="input-create" type="submit" value="Publicar" /></Link>
             
         </form>
         

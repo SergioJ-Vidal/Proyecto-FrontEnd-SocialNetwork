@@ -1,13 +1,11 @@
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../features/auth/authSlice";
-import { useState } from "react";
+import { Button, Menu } from 'antd';
+import Login from "../Login/Login";
 import logo from "../../assets/images/logo.png"
 import "./Header.scss"
-
-import Login from "../Login/Login";
-import Register from "../Register/Register";
-
 
 const Header = () => {
 
@@ -37,6 +35,8 @@ const Header = () => {
 
     };
 
+        // const imageUrl = "http://localhost:8080/images/users/" + user.user.image;
+
     return (
 
         <div className="header-container">
@@ -54,13 +54,20 @@ const Header = () => {
                         <label for="name" class="form__label">Search Post</label>
                     </div>
 
+
+
                     <div className="header-options">
 
                         {user ? <>
 
                             <span><Link to="/" onClick={onLogout}>Logout</Link></span>
 
-                            <span><Link to="/profile" >Profile</Link> </span>
+
+                            <div className="avatar-div">
+                                <a href="http://localhost:3000/profile" rel="noopener noreferrer" title="facebook">
+                                    <img src={logo} className="user-img" alt="facebook"></img></a>
+                            </div>
+
 
                         </>
 
@@ -70,7 +77,7 @@ const Header = () => {
 
                                 <Login />
 
-                                <span><Link to="/register">Register</Link></span>
+                                <Button><Link to="/register">Register</Link></Button>
 
                             </>
 

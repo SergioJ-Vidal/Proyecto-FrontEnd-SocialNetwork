@@ -208,6 +208,11 @@ export const postsSlice = createSlice({
                 state.post = action.payload;
             })
 
+            // .addCase(likePosts.fulfilled, (state, action) => {
+            //     state.post = action.payload;
+            // })
+
+
 
     },
 
