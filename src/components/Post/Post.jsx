@@ -22,7 +22,7 @@ const Post = () => {
             <div className="post" key={post._id}>
 
                 <div className="icon">
-                <img src={logo} className="logo" alt="mailpost"></img>
+                <img src={logo} className="mapost-img" alt="mailpost"></img>
                 </div>
 
                 <div className="post-details">
@@ -37,7 +37,7 @@ const Post = () => {
                 </div>
 
                 <div className="commentaries">
-                <img src={bubble} className="logo" alt="bubble"></img>
+                <img src={bubble} className="mapost-img" alt="bubble"></img>
                 <span>{comments.length}</span>
                 </div>    
 

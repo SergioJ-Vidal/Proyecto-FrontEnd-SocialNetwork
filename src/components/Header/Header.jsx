@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../features/auth/authSlice";
 import { Button, Menu } from 'antd';
 import Login from "../Login/Login";
-import logo from "../../assets/images/logo.png"
+import logo from "../../assets/images/forum-logo.png"
 import "./Header.scss"
 
 const Header = () => {
@@ -34,8 +34,6 @@ const Header = () => {
         navigate("/");
 
     };
-
-        // const imageUrl = "http://localhost:8080/images/users/" + user.user.image;
 
 
     return (

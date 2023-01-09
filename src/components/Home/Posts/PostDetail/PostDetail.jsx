@@ -32,11 +32,13 @@ const PostDetail = () => {
         return (
 
             <div className="comment" key={comment.id}>
-
+                <div className="comments-userinfo">
                 <img src={avatarComment} className="user-imgPost" alt="userimg"></img>
                 <span>{name}</span>
-                <p className="comment-title">{comment.title}</p>
-
+                </div>
+                <div className="comments-body">
+                <p className="comment-title">{comment.body}</p>
+                </div>
             </div>
         );
 
@@ -62,6 +64,10 @@ const PostDetail = () => {
                 </div>
             </div>
 
+            <div className="comments">
+                {comment}
+            </div>
+
             <div className="button-details">
 
                 <Link to={"/"}><button onClick={removePost}>Remove</button></Link>
@@ -71,9 +77,6 @@ const PostDetail = () => {
 
             </div>
 
-            <div className="comments">
-                {comment}
-            </div>
         </div>
 
     );

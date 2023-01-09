@@ -8,17 +8,17 @@
 }
 
 .social-logo {
-    width: 3em;
+    width: 2em;
 }
 
 .footer-info{
     font-size: 1.5em;
     display: flex;
-    gap: 1.3em;
+    gap: 3em;
     color: rgb(205, 46, 26);
 }
 
 #social-media {
     display: flex;
-    gap: 1.3em;
+    gap: 3em;
 }

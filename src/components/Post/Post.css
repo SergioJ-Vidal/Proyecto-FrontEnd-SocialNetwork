@@ -68,4 +68,14 @@ a:hover {
 
 .post-title {
     font-weight: bold;
+    color: rgba(206, 70, 25, 0.781);
+    font-size: 1.6rem;
+}
+
+.mapost-img{
+    width: 3vw;
+}
+
+.nickname {
+    font-size: 1.3rem;
 }
