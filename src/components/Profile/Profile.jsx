@@ -33,24 +33,24 @@ const Profile = () => {
     return (
 
         <div className="profile-view">
-        
-        <div className="profile">
 
-            <div className="profile-info">
-            <h1>Profile</h1>
+            <div className="profile">
 
-            <p>{user.user.name}</p>
+                <div className="profile-info">
+                    <h1>Profile</h1>
 
-            <p>{user.user.email}</p>
-            </div>
-            <div className="user-posts">
-                Posts
-                {postRender}
-            </div>
+                    <p>{user.user.name}</p>
+
+                    <p>{user.user.email}</p>
+                </div>
+                <div className="user-posts">
+                    Posts
+                    {postRender}
+                </div>
             </div>
         </div>
 
-        
+
     );
 
 };

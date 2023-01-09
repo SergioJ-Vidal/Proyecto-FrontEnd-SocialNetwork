@@ -3,7 +3,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../features/auth/authSlice";
 import { useState } from "react";
 import logo from "../../assets/images/logo.png"
+import { Menu } from "antd";
+import { UserOutlined } from "@ant-design/icons"
 import "./Header.css"
+
+import Login from "../Login/Login";
+import Register from "../Register/Register";
 
 
 const Header = () => {
@@ -62,7 +67,7 @@ const Header = () => {
 
                             <>
 
-                                <span><Link to="/login">Login</Link></span>
+                                <Login />
 
                                 <span><Link to="/register">Register</Link></span>
 

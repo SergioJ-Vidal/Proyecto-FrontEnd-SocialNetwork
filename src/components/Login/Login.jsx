@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from "react-redux";
 import { login } from "../../features/auth/authSlice";
+import { Button, Form, Input, Modal } from "antd";
 
 const Login = () => {
 
@@ -28,24 +29,110 @@ const Login = () => {
 
     }
 
+    
+    const [loading, setLoading] = useState(false);
+    const [open, setOpen] = useState(false);
+    
+    const showModal = () => {
+        setOpen(true);
+    };
+    
+    const handleOk = () => {
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+            setOpen(false);
+        }, 3000);
+    };
+
     const onSubmit = (e) => {
 
         e.preventDefault()
         dispatch(login(formData));
+        handleOk()
 
     }
 
+    const handleCancel = () => {
+        setOpen(false);
+    };
+
     return (
 
-        <form onSubmit={onSubmit}>
+        <>
+            <Button className="btnLogin" type="primary" onClick={showModal}>
+                Login
+            </Button>
+            <Modal className="modal-form" open={open} title="Login to your user" onOk={handleOk} onCancel={handleCancel}
+                footer={[
+                    <Button className="loginReturnBtn" key="back" onClick={handleCancel}>
+                        Return
+                    </Button>,
+                    <Button className="loginSendBtn" key="submit" type="submit" form="myform" value="Submit" htmlType="submit" loading={loading} onClick={onSubmit}>
+                        Login
+                    </Button>
+                ]}
+            >
+                <div className="container">
+                    <form onSubmit={onSubmit} id="myform" name="basic"
+                        labelCol={{
+                            span: 8,
+                        }}
+                        wrapperCol={{
+                            span: 16,
+                        }}
+                        initialValues={{
+                            remember: true,
+                        }}
+        
+                        autoComplete="off">
 
-            <input type="email" name="email" value={email} onChange={onChange} />
+                        <input type="email" name="email" value={email} onChange={onChange} />
 
-            <input type="password" name="password" value={password} onChange={onChange} />
+                        <input type="password" name="password" value={password} onChange={onChange} />
 
-            <button type="submit">Login</button>
+                    </form>
 
-        </form>
+
+                    {/* <Form className="form-container" id="myform" name="basic"
+                        labelCol={{
+                            span: 8,
+                        }}
+                        wrapperCol={{
+                            span: 16,
+                        }}
+                        initialValues={{
+                            remember: true,
+                        }}
+                        onFinish={onFinish}
+                        onSubmit={onSubmit}
+                        autoComplete="off"
+                    >
+                        <Form.Item label="Email" name="email"
+                            rules={[
+                                {
+                                    required: true,
+                                    type: "email",
+                                    message: "Please input your email!",
+                                },
+                            ]}
+                        >
+                            <Input onChange={onChange} value={email}/>
+                        </Form.Item>
+
+                        <Form.Item label="Password" name="password"
+                            rules={[{ required: true, message: "Please input your password!" }
+                            ]}
+                        >
+                            <Input.Password  onChange={onChange} value={password}/>
+                        </Form.Item>
+                    </Form> */}
+                </div>
+            </Modal>
+
+        </>
+
+
 
     )
 
