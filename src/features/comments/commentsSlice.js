@@ -22,6 +22,20 @@ export const getByPost = createAsyncThunk("posts/getById", async (id) => {
 
 });
 
+export const create = createAsyncThunk("comments/create", async (id) => {
+
+    try {
+
+        return await commentsService.getComments(id);
+
+    } catch (error) {
+
+        console.error(error);
+
+    }
+
+});
+
 export const commentsSlice = createSlice({
 
     name: "comments",

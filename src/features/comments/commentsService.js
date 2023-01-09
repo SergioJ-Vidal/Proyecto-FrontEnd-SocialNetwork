@@ -10,6 +10,15 @@ const getComments = async (id) => {
 
 };
 
+const createComment = async (id) => {
+
+    const res = await axios.post(API_URL + "comments/create/"+ id + "/comment");
+
+    return res.data;
+
+};
+
+
 const commentsService = {
 
     getComments

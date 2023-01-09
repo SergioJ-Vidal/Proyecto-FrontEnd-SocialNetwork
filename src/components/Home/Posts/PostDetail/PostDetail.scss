@@ -5,7 +5,30 @@
     align-items: center;
     background-color: white;
     border-radius: 8px;
-    width: 80%;
+    width: 80vw;
+    border: solid red 1px;
+}
+
+.user-details {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    width: 100%;
+    border-bottom: solid #f5f5f5 1px;
+}
+
+
+.body-postDetail {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    width: 100%;
 }
 
 .post-detail-box {
@@ -21,8 +44,8 @@ h1 {
     border-bottom: solid black 1px;
 }
 
-.user-imgPost{
-    width: 18%;
+.user-imgPost {
+    width: 10%;
 }
 
 .comment {

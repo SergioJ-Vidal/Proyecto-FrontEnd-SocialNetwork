@@ -30,7 +30,7 @@ const Profile = () => {
 
     });
 
-    // const imageUrl = "http://localhost:8080/images/users/" + user.user.image;
+    const imageUrl = "http://localhost:8080/images/users/" + user.user.image;
 
     return (
 
@@ -41,14 +41,14 @@ const Profile = () => {
                 <div className="profile-info">
                     <h1>{user.user.name}</h1>
 
-                    {/* <img src={imageUrl}  className="userimg" alt="userimg"></img> */}
+                    <img src={imageUrl} className="userimg" alt="userimg"></img>
 
                     <p>{user.user.email}</p>
                 </div>
-                <div className="user-posts">
-                    Posts
-                    {postRender}
-                </div>
+            </div>
+            <div className="user-posts">
+                <h2>Tus Posts</h2>
+                {postRender}
             </div>
         </div>
 

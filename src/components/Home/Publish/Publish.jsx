@@ -1,19 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {useNavigate} from "react-router-dom"
 import { useDispatch } from "react-redux";
 import { Input } from 'antd';
 import { createPost } from "../../../features/posts/postsSlice";
 import "./Publish.css"
 
 const Publish = () => {
-    console.log()
+    const navigate = useNavigate();
     const { TextArea } = Input;
 
     const dispatch = useDispatch()
 
     const onSubmit = async (event) => {
-        console.log("hola")
-        console.log(event)
+        
         event.preventDefault();
 
         const formData = new FormData(event.target);

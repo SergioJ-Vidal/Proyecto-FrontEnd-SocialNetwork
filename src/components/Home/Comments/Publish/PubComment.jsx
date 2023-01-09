@@ -1,16 +1,17 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Input } from 'antd';
 import { updateThread } from "../../../../features/posts/postsSlice";
-import "./Edit.scss"
 
-const Edit = () => {
+
+const createCommentById = () => {
+
     const { TextArea } = Input;
 
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
 
-    const { id } = useParams();
+    // const { id } = useParams();
 
     const onSubmit = (event) => {
 
@@ -22,11 +23,11 @@ const Edit = () => {
 
         console.log(postCreated)
 
-        const test = {id, postCreated}
+        // const test = {id, postCreated}
 
         console.log(test)
 
-        dispatch(updateThread(test))
+        // dispatch(updateThread(test))
 
     };
 
@@ -36,7 +37,7 @@ const Edit = () => {
 
         <form onSubmit={onSubmit} className="form-send">
 
-            <span className="form-header">Editar tema</span>
+            <span className="form-header">Crear comentario</span>
 
             <Input name="title" placeholder="Título"  />
             
@@ -51,4 +52,4 @@ const Edit = () => {
 
 };
 
-export default Edit;
+export default createCommentById;

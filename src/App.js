@@ -11,6 +11,7 @@ import Search from './components/Search/Search';
 import Publish from './components/Home/Publish/Publish';
 import "./App.css"
 import Edit from './components/Home/Posts/Edit/Edit';
+import PubComments from './components/Home/Comments/Publish/PubComment';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <Route path="/post/:id" element={<PostDetail />} />
       <Route path="/createPost" element={<Publish />} />
       <Route path="/updatePost/:id" element={<Edit />} />
+      <Route path="/commentPost/:id" element={<PubComments />} />
       </Routes>
       <Footer />
       </BrowserRouter>

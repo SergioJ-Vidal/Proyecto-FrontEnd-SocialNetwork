@@ -15,6 +15,7 @@ const Posts = () => {
 
         dispatch(reset());
     }
+    
     useEffect( () => {
         getAllAndReset()
 
@@ -31,9 +32,10 @@ const Posts = () => {
         <div className='body-post'>
 
            <div className='postie'> 
+
            <span className='title'>Foro General</span>
-           
            <Link to="/createPost" ><button className='create-topic'>Crear Tema</button></Link>
+
            </div>
 
             <Post />
