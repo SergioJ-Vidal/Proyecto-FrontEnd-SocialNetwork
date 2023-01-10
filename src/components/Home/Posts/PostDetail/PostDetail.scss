@@ -3,6 +3,11 @@
     src: url("../../../../assets/fonts/Mont-HeavyDEMO.otf");
 }
 
+@font-face {
+    font-family: "Dashe";
+    src: url("../../../../assets/fonts/Mont-HeavyDEMO.otf");
+}
+
 .post-detail {
     display: flex;
     flex-direction: column;
@@ -112,4 +117,14 @@
     display: flex;
     flex-direction: column;
     gap:15px;
+}
+
+.comment-title{
+    font-family: "Dash";
+    width: 90%;
+}
+
+.post-body-p{
+    font-family: "Dash";
+    width: 90%;
 }

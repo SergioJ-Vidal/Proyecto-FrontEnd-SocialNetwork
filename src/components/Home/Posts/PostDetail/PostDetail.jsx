@@ -63,7 +63,7 @@ const PostDetail = () => {
                 </div>
 
                 <div className="body-postDetail">
-                    <p>{post.body}</p>
+                    <p className="post-body-p">{post.body}</p>
                 </div>
                 <div className="button-details">
 
