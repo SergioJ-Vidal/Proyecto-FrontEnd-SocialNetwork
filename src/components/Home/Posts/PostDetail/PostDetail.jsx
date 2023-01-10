@@ -32,13 +32,15 @@ const PostDetail = () => {
 
         return (
 
-            <div className="comment" key={comment.id}>
-                <div className="comments-userinfo">
-                    <img src={avatarComment} className="user-imgPost" alt="userimg"></img>
-                    <span className="nickname-posts">{name}</span>
-                </div>
-                <div className="comments-body">
-                    <p className="comment-title">{comment.body}</p>
+            <div className="comments-containery">
+                <div className="comment" key={comment.id}>
+                    <div className="comments-userinfo">
+                        <img src={avatarComment} className="user-imgPost" alt="userimg"></img>
+                        <span className="nickname-posts">{name}</span>
+                    </div>
+                    <div className="comments-body">
+                        <p className="comment-title">{comment.body}</p>
+                    </div>
                 </div>
             </div>
         );
